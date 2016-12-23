@@ -1,2 +1,74 @@
 # BlockyTime
-a little side project by Flask and bootstrap
+
+a little side project by Flask(?) and bootstrap
+
+idea from: [BlockyTime - anniapp](http://www.anniapp.com/blockytime/index.html)
+
+---
+
+
+
+
+##requirement
+
+build a easy-using time tracking web application
+
+1. We can switch the date of recording
+2. Everyday was divided to \\(24*2=48\\) blocks, 30mins for each
+3. Intially, every block was filled by "Sleeping time"
+4. Users can choose every block, multiple choosing was supported too.
+5. no drag function in first version
+6. We can added category to blocky time
+7. Everyday's data will be saved on server
+
+
+##UI
+
+
+
+
+
+---
+
+Devoloper notes:
+
+12.16
+
+- specifying the requiremnt 
+- initialized git repo
+- Copied a templated from bootstrap
+
+
+12.17
+
+Goal:
+
+finish the main UI: select time, set time
+
+Note:
+
+### Check box buttons
+
+> Add data-toggle="button" to activate toggling on a single button
+
+---
+
+for button `<label>` should be contained in `<div>` , otherwise the check box will not perform correctly.
+
+---
+
+if I create a new column, this colum will be splited to 12 columns automatically.
+
+for example, if I created a column `col-xs-6`, and I want to divide this to two parts, I should create two `col-xs-6` columns in that columns.
+
+---
+
+[let block fulfill the height](http://www.webhek.com/css-100-percent-height)
+
+---
+
+I cannot use padding or margin, so I used a placeholder `div` to make the main page shift down some distance.
+
+Avoiding the collapse of mainpage and nav bar
+
+
