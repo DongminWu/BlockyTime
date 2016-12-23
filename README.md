@@ -25,21 +25,37 @@ build a easy-using time tracking web application
 ##UI
 
 
+### first version
+
+*main page*
+
+![](./img/2016-12-23-19-20-32.png)
+
 
 
 
 ---
 
-Devoloper notes:
+## TODO list
 
-12.16
+1. [ ]front end part
+	* [x] main page
+2. [ ] back end
+	* [ ] data base designing
+	* [ ] API designing (use REST API?)
+	* [ ] programming
+
+
+##Devoloper notes:
+
+## 12.16
 
 - specifying the requiremnt 
 - initialized git repo
 - Copied a templated from bootstrap
 
 
-12.17
+##12.23
 
 Goal:
 
