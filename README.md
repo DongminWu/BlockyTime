@@ -44,6 +44,10 @@ build a easy-using time tracking web application
 	* [ ] data base designing
 	* [ ] API designing (use REST API?)
 	* [ ] programming
+		* [x]set up flask server
+		* [ ]data base model
+		* [ ]programming REST API
+		* [ ]control
 
 
 ##Devoloper notes:
