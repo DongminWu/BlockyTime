@@ -1,0 +1,51 @@
+html, body, .timetable
+{
+  height: 100%;
+}
+
+body .container{
+  height: 100%;
+}
+
+.placeholder{
+  max-height: 10%
+}
+.mainpage{
+  max-height: 85%
+
+}
+
+body .container .row{
+  height: 100%
+}
+
+body{
+    position: relative;
+}
+
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.halfhour-column .row label
+{
+  background-color: #ffd7cc ;
+}
+
+.halfhour-column .row
+{
+  padding: 1px 1px 1px 1px
+}
+
+.hour-column .row
+{
+  padding: 1px 1px 1px 1px
+}
+
+.timetable
+{
+  max-height: 100%;
+  overflow: scroll;
+}
