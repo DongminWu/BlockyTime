@@ -41,7 +41,7 @@ build a easy-using time tracking web application
 1. [ ]front end part
 	* [x] main page
 2. [ ]back end
-	* [ ] data base designing
+	* [x] data base designing
 	* [ ] API designing (use REST API?)
 	* [ ] programming
 		* [x]set up flask server
@@ -144,4 +144,30 @@ def foo():
 ](http://stackoverflow.com/questions/22259847/application-not-picking-up-css-file-flask-python)
 
 
+---
+
+[jsonify a SQLAlchemy result set in Flask](http://stackoverflow.com/questions/7102754/jsonify-a-sqlalchemy-result-set-in-flask)
+
+---
+
+we should store following data:
+
+**Primary-Category**
+
+Category name | color set		| logo |
+------------- | -------------	|---|
+Sport		  | red|a.png
+study  | green|b.png
+
+**Children-Category**
+
+category name | color| logo| primary|
+|---|---|---|---|
+|joging|origin|jog.png|Sport|
+
+
+**Block**
+
+|date|time|category|
+|---|---|---|
 
