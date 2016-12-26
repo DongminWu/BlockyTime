@@ -1,3 +1,8 @@
+.row
+{
+/*    margin: 0px*/
+}
+
 html, body, .timetable
 {
   height: 100%;
@@ -48,4 +53,15 @@ body{
 {
   max-height: 100%;
   overflow: scroll;
+}
+
+.catagory_and_date
+{
+    height: 100%;
+}
+
+.catagory
+{
+    max-height: 70%;
+    overflow: scroll
 }

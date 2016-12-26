@@ -16,6 +16,7 @@
 
     <!-- Custom styles for this template -->
     <link href="./css/main.css" rel="stylesheet">
+    <link href="./css/bootstrap-datepicker.css" rel="stylesheet">
 
     <style>
 
@@ -390,13 +391,31 @@
 
             <!-- >>>> category column start -->
 
-            <div class="col-xs-4">
-                <div class="row">
-                    <h3>Category</h3>
+            <div class="col-xs-4 catagory_and_date">
+                <h3>Category</h3>
+                <div class="row catagory">
+                        <button class="btn btn-primary btn-block">study</button>
+                        <button class="btn btn-primary btn-block">study</button>
+                        <button class="btn btn-primary btn-block">study</button>
+                        <button class="btn btn-primary btn-block">study</button>
+                        <button class="btn btn-primary btn-block">study</button>
+                        <button class="btn btn-primary btn-block">study</button>
+                        <button class="btn btn-primary btn-block">study</button>
+                        <button class="btn btn-primary btn-block">study</button>
+                        <button class="btn btn-primary btn-block">study</button>
+                        <button class="btn btn-primary btn-block">study</button>
+                        <button class="btn btn-primary btn-block">study</button>
+                        <button class="btn btn-primary btn-block">study</button>
+                        <button class="btn btn-primary btn-block">study</button>
+                        <button class="btn btn-primary btn-block">study</button>
+                        <button class="btn btn-primary btn-block">study</button>
+
                 </div>
-                <div class="row">
-                    <button class="btn btn-primary btn-block">study</button>
-                </div>
+                <h3>Date</h3>
+<div class="row date">
+   <input id="datepicker" type="text" class="form-control" value="25/12/2016">
+</div>
+
             </div>
             <!-- <<<< category column end -->
 
@@ -413,8 +432,26 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/bootstrap-datepicker.js"></script>
+    
+    
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+<script>
+    $(document).ready(function() {
+        $('#datepicker').datepicker({
+            format: "dd/mm/yyyy",
+            todayBtn: "linked",
+            keyboardNavigation: false,
+            autoclose: true,
+            todayHighlight: true
+        }).on("changeDate", function(e) {
+            alert("Date Changed!");
+        });
+    });
+</script>
+    
 </body>
 
 </html>
