@@ -171,3 +171,28 @@ category name | color| logo| primary|
 |date|time|category|
 |---|---|---|
 
+##12.26
+
+Added a datepicker:
+
+[uxsolutions/bootstrap-datepicker](https://uxsolutions.github.io/bootstrap-datepicker/?markup=input&format=dd%2Fmm%2Fyyyy&weekStart=&startDate=&endDate=&startView=0&minViewMode=0&maxViewMode=4&todayBtn=linked&clearBtn=false&language=en&orientation=auto&multidate=&multidateSeparator=&autoclose=on&todayHighlight=on&forceParse=on#sandbox)
+
+notes:
+
+1. there a lot of useless files in downloaded package for my project. following is useful:
+	- bootstrap-datepicker.js
+	- bootstrap-datepicker.css
+2. I should review the knowledge of jQuery
+
+---
+
+It is better not to put lots of rows in a column..
+
+I found a margin issue, but after cutting down the number of rows from 10+ to 1. That issue has been gone.
+
+Weird.
+
+
+
+
+
