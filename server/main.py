@@ -1,4 +1,4 @@
-import os
+import os,sys,time
 from flask import Flask, render_template
 
 
@@ -40,5 +40,8 @@ def index():
 if __name__ == '__main__':
     config = MyConfig()
     debug_msg("BlockyTime Version: "+str(config.getConfig("version")))
+
+    ModelMainPage().create_an_empty_day(time.strptime("2016-12-27 00:00:00",
+                                                      "%Y-%m-%d %H:%M:%S"));
 #    app.run()
 

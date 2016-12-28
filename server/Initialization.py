@@ -32,8 +32,6 @@ class Initialization:
 
         def __init__(self):
             pass
-            
-            
 
         def get_global_app(self):
             return self.app

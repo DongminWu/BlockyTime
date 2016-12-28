@@ -154,22 +154,29 @@ we should store following data:
 
 **Primary-Category**
 
-Category name | color set		| logo |
-------------- | -------------	|---|
-Sport		  | red|a.png
-study  | green|b.png
+id|Category name | color set		| logo |
+|---|------------- | -------------	|---|
+0|Sport		  | red|a.png
+1|study  | green|b.png
 
-**Children-Category**
+**second-Category**
 
-category name | color| logo| primary|
-|---|---|---|---|
-|joging|origin|jog.png|Sport|
+id|parent_id|category name | color| logo|
+|---|---|---|---|---|---|
+|0|joging|origin|jog.png|
 
+
+**date**
+
+|id|date|last-changed-time|
+|---|---|---|
+|0|12-28-2016|01-01-2016 20:00|
 
 **Block**
 
-|date|time|category|
-|---|---|---|
+|id|date_id|show_time|position|second-category-shid|
+|---|---|---|----|----|---|
+0|2|12:30|12|3
 
 ##12.26
 
@@ -215,6 +222,36 @@ python is a scriping language, actually, the codes on the first line will be exe
 Totally different from C...
 
 ---
+
+
+Time issue
+
+There are some type of "Time" description in SQL
+
+- DATE
+- TIME
+- DATETIME
+
+If you set a column to "DATE", you can only write date with `datetime.date(year,mon,date)`
+
+For "DATETIME", using `datetime.datetime(year,mon,date,hour,minus, second)`
+
+if you want to get current time, please use `time.localtime()`
+
+you will get a structure like this:
+`time.struct_time(tm_year=2016, tm_mon=12, tm_mday=28, tm_hour=18, tm_min=22, tm_sec=7, tm_wday=2, tm_yday=363, tm_isdst=0)`
+
+
+Each property of that structure is read-only. 
+
+If you want to customize a time structure, you can use `time.strptime("2016-12-28 00:00:00", "%Y-%m-%d %H:%M:%S")`
+
+[detailed document](http://www.runoob.com/python/python-date-time.html)
+
+
+---
+
+
 
 
 
