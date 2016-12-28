@@ -193,6 +193,37 @@ I found a margin issue, but after cutting down the number of rows from 10+ to 1.
 Weird.
 
 
+##12.28
+
+Goal: create database of backend
+
+
+---
+
+I obtained some class as Singleton, such initialization and datebase model.
+
+tutorial:
+
+[Singleton](http://python-3-patterns-idioms-test.readthedocs.io/en/latest/Singleton.html)
+
+---
+
+Note:
+
+python is a scriping language, actually, the codes on the first line will be executed first.
+
+Totally different from C...
+
+---
+
+
+
+
+
+
+
+
+
 
 
 
