@@ -1,4 +1,4 @@
-import os,sys,time
+import os,sys,datetime
 from flask import Flask, render_template
 
 
@@ -22,16 +22,20 @@ view = ViewMainPage()
 
 
 Initialization().global_create_app(__name__);
-app = Initialization().get_global_app();
+init_app = Initialization().get_global_app();
 
-db = Initialization().global_create_db(app);
+init_db = Initialization().global_create_db(init_app);
 
 from ModelMainPage import ModelMainPage
 #datamodel initialization
-ModelMainPage().initialize_database(db)
+ModelMainPage().initialize_database(init_db)
+
+def test_import():
+    from Initialization import Initialization
+    from ModelMainPage import ModelMainPage
 
 
-@app.route('/')
+@init_app.route('/')
 def index():
     return view.generatePage();
 
@@ -39,9 +43,14 @@ def index():
 
 if __name__ == '__main__':
     config = MyConfig()
-    debug_msg("BlockyTime Version: "+str(config.getConfig("version")))
+    debug_msg("**********************************************")
+    debug_msg("             BlockyTime Version: "+str(config.getConfig("version")))
+    debug_msg("**********************************************")
 
-    ModelMainPage().create_an_empty_day(time.strptime("2016-12-27 00:00:00",
-                                                      "%Y-%m-%d %H:%M:%S"));
+    ModelMainPage().get_Date(datetime.date(2016,12,28));
+    ModelMainPage().get_Blocks_from_date_id(0)
+    ModelMainPage().get_Second_Category_from_id(0)
+    ModelMainPage().get_Primary_Category_from_id(0)
+    ModelMainPage().get_full_info_form_date(datetime.date(2016,12,28));
 #    app.run()
 

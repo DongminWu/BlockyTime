@@ -45,7 +45,7 @@ build a easy-using time tracking web application
 	* [ ] API designing (use REST API?)
 	* [ ] programming
 		* [x]set up flask server
-		* [ ]data base model
+		* [x]data base model
 		* [ ]programming REST API
 		* [ ]control
 
@@ -251,16 +251,63 @@ If you want to customize a time structure, you can use `time.strptime("2016-12-2
 
 ---
 
+what is forginKey
+
+[外键（引用）约束](http://www.ibm.com/support/knowledgecenter/zh/SSEPGG_9.5.0/com.ibm.db2.luw.admin.dbobj.doc/doc/c0020153.html)
+
+
+
+##12.29
+
+
+Goal:
+
+
+finish backend programming, if possible, write api
+
+
+----
+
+[flask rest api library](http://flask-restful-cn.readthedocs.io/en/0.3.5/quickstart.html)
+
+
+---
+
+Serialize the query result to JSON
+
+[jsonify a SQLAlchemy result set in Flask](http://stackoverflow.com/questions/7102754/jsonify-a-sqlalchemy-result-set-in-flask)
 
 
 
 
+----
 
 
+Little tricks
+
+`is` = `==`
+
+`is not` = `!=`
+
+---
+
+... the built-in class `datetime` can also get current time
+
+[PYTHON-基础-时间日期处理小结](http://www.wklken.me/posts/2015/03/03/python-base-datetime.html#1-datetime_1)
+
+remove microsecond from `datetime.datetime.now()'
+
+```
+>>> import datetime
+>>> now = datetime.datetime.now()
+>>> print unicode(now.replace(microsecond=0))
+2011-11-03 11:19:07
+```
 
 
+[Python datetime to string without microsecond component](http://stackoverflow.com/questions/7999935/python-datetime-to-string-without-microsecond-component)
 
 
-
+second answer
 
 
