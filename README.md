@@ -25,7 +25,12 @@ build a easy-using time tracking web application
 ##UI
 
 
-### first version
+### V0.1 version
+
+![](./img/2016-12-30-23-13-53.png)
+
+
+### first ui
 
 *main page*
 
@@ -34,20 +39,22 @@ build a easy-using time tracking web application
 
 
 
+
+
 ---
 
 ## TODO list
 
-1. [ ]front end part
-	* [x] main page
-2. [ ]back end
-	* [x] data base designing
-	* [ ] API designing (use REST API?)
-	* [ ] programming
-		* [x]set up flask server
-		* [x]data base model
-		* [ ]programming REST API
-		* [ ]control
+
+back-end
+
+2. support for multiple users
+
+front-end
+
+1. support for bad internet connection situation
+2. function of add category
+3. 1. UI and UX redesign
 
 
 ##Devoloper notes:
@@ -314,4 +321,10 @@ second answer
 
 ##12.30
 
+
+kind of finished!
+
+met a weird 405 http issue, at last find it is not the problem of CORS.
+
+----
 
