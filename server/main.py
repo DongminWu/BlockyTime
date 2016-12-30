@@ -30,6 +30,9 @@ from ModelMainPage import ModelMainPage
 #datamodel initialization
 ModelMainPage().initialize_database(init_db)
 
+from ControllerMainPage import ControllerMainPage
+ControllerMainPage().initialize_api()
+
 def test_import():
     from Initialization import Initialization
     from ModelMainPage import ModelMainPage
@@ -51,6 +54,9 @@ if __name__ == '__main__':
     ModelMainPage().get_Blocks_from_date_id(0)
     ModelMainPage().get_Second_Category_from_id(0)
     ModelMainPage().get_Primary_Category_from_id(0)
-    ModelMainPage().get_full_info_form_date(datetime.date(2016,12,28));
-#    app.run()
+    ModelMainPage().get_all_Category()
+    ModelMainPage().get_block_info_from_date(datetime.date(2016,12,28));
+
+
+    init_app.run(debug=True)
 

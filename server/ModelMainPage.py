@@ -244,6 +244,45 @@ class ModelMainPage:
             info = info[0]
             debug_msg(info.serialize)
             return info.serialize
+        
+        def get_all_Second_Category_from_Primary_id(self,primary_id):
+            debug_msg(">>> %s.%s" %( __name__,sys._getframe().f_code.co_name))
+            info = Second_Category.query.filter_by(primary_id = primary_id).all()
+            if info is None:
+                debug_msg("cannot find Second_Category item of this date id %d" % id)
+                return None
+            ret = []
+            
+            for each_category in info:
+                ret.append(each_category.serialize)
+            debug_msg(ret)
+            return ret
+
+        def get_all_Primary_Category(self):
+            debug_msg(">>> %s.%s" %( __name__,sys._getframe().f_code.co_name))
+            info = Primary_Category.query.all()
+            if info is None:
+                debug_msg("cannot find Primary_Category item of this date id %d" % id)
+                return None
+            ret = []
+            for each_category in info:
+                ret.append(each_category.serialize)
+            debug_msg(ret)
+            return ret
+        def get_all_Category(self):
+            debug_msg(">>> %s.%s" %( __name__,sys._getframe().f_code.co_name))
+            ret = copy.deepcopy(self.get_all_Primary_Category())
+            if ret is None:
+                return None
+            for each_obj in ret:
+                each_obj['second_category']=self.get_all_Second_Category_from_Primary_id(each_obj['id'])
+            debug_msg(ret)
+            return ret
+
+
+
+
+
         ## 
         # @brief get full data of a day, (no necessary for primary, reduce the data?)
         # 
@@ -276,13 +315,21 @@ class ModelMainPage:
 
             }
         '''
-        def get_full_info_form_date(self,date):
+        def get_block_info_from_date(self,date):
             debug_msg(">>> %s.%s" %( __name__,sys._getframe().f_code.co_name))
             ret={}
             if date is None:
                 debug_msg("None value")
                 return None
             date_dict = self.get_Date(date)
+            if date_dict is None:
+                debug_msg("None value")
+                return None
+
+            #turn datetime to string
+            date_dict['date'] = date_dict['date'].strftime("%Y-%m-%d")
+            date_dict['last_changed_time'] = date_dict['last_changed_time'].strftime("%Y-%m-%d %H:%M:%S")
+
             blocks_list = self.get_Blocks_from_date_id(date_dict['id'])
             for block in blocks_list:
                 second_category_dict = self.get_Second_Category_from_id(block['second_category_id'])
@@ -290,7 +337,7 @@ class ModelMainPage:
 
             ret = copy.deepcopy(date_dict)
             ret['Blocks'] = copy.deepcopy(blocks_list)
-            print(ret)
+            return ret
 
         def add_a_Primary_Category(self,name,color):
             if (name or color )is None:
