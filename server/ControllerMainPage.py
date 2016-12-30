@@ -4,7 +4,6 @@ from flask_restful import Resource, Api
 
 from Initialization import Initialization
 from ModelMainPage import ModelMainPage
-from ViewMainPage import ViewMainPage
 
 from Utilities import debug_msg
 

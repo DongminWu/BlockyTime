@@ -1,12 +1,12 @@
 import os,sys,datetime
 from flask import Flask, render_template
+from flask_cors import CORS, cross_origin
 
 
 
 from Initialization import Initialization
 from MyConfig import MyConfig
 from Utilities import debug_msg
-from ViewMainPage import ViewMainPage
 
 
 
@@ -15,7 +15,6 @@ from ViewMainPage import ViewMainPage
 
 
 
-view = ViewMainPage()
 
 
 
@@ -23,6 +22,8 @@ view = ViewMainPage()
 
 Initialization().global_create_app(__name__);
 init_app = Initialization().get_global_app();
+debug_msg("enable CORS")
+CORS(init_app, send_wildcard = True)
 
 init_db = Initialization().global_create_db(init_app);
 
@@ -30,8 +31,15 @@ from ModelMainPage import ModelMainPage
 #datamodel initialization
 ModelMainPage().initialize_database(init_db)
 
+from ViewMainPage import ViewMainPage
+view = ViewMainPage()
+
 from ControllerMainPage import ControllerMainPage
 ControllerMainPage().initialize_api()
+
+
+
+
 
 def test_import():
     from Initialization import Initialization

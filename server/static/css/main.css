@@ -1,3 +1,9 @@
+ul,li
+{
+  list-style-type: none;
+  margin:0px;
+}
+
 html, body, .timetable
 {
   height: 100%;
