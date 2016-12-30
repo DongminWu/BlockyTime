@@ -42,7 +42,7 @@ class Resource_Blocks(Resource):
         info = ModelMainPage().get_Blocks_from_date_id(data)
         ret = json.dumps(info)
         return ret
-    def put(self , data):
+    def post(self , data):
         decoded = json.loads(request.form['data'])
         if decoded == None:
             return "None data",400
