@@ -22,6 +22,11 @@ class Resource_Date(Resource):
     def get(self, date):
         formatted_datetime = datetime.datetime.strptime(date,"%Y-%m-%d").date()
         info =  ModelMainPage().get_block_info_from_date(formatted_datetime)
+        if info is None:
+            result=ModelMainPage().create_an_empty_day(formatted_datetime)
+            if result is None:
+                return "Error creating empty day",400
+        info =  ModelMainPage().get_block_info_from_date(formatted_datetime)
         ret = json.dumps(info)
         return ret
         
