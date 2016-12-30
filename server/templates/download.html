@@ -1,7 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,10 +12,11 @@
     <title>BlockyTime</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{{ url_for('static',filename='css/bootstrap.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='./css/bootstrap.css')}}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="{{ url_for('static',filename='css/main.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='./css/main.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='./css/bootstrap-datepicker.css')}}" rel="stylesheet">
 
     <style>
 
@@ -29,393 +30,403 @@
       <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
+</head>
 
-  <body body-spy="scroll">
+<body body-spy="scroll">
 
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle </span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Blocky Time</a>
+                <a class="navbar-brand" href="#">Blocky Time</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
     </nav>
 
     <div class="container">
-      <div class="row placeholder">
+        <div class="row placeholder">
 
-      </div>
-      <div class="row mainpage">
-        <div class="col-xs-6 timetable" >
-          <div class="row">
-
-
-
-
-
-        <div class="col-xs-6 hour-column">
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+        </div>
+        <div class="row mainpage">
+            <div class="col-xs-6 timetable">
+                <div class="row">
+                    <div class="col-xs-6 hour-column">
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               00:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               01:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               02:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               02:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               03:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               04:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               05:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               06:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               07:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               08:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               09:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               10:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               11:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               12:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               13:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               14:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               15:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               16:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               17:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               18:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               19:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               20:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               21:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               22:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               23:00
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
-              <input type="checkbox" autocomplete="off" checked>
-              24:00
-            </label>
-          </div>
+                        </div>
 
 
-        </div>
+                    </div>
 
-        <div class="col-xs-6 halfhour-column">
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block" >
+                    <div class="col-xs-6 halfhour-column">
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               00:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               01:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               02:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               02:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               03:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               04:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               05:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               06:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               07:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               08:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               09:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               10:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               11:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               12:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               13:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               14:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               15:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               16:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               17:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               18:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               19:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               20:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               21:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               22:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
+                        </div>
+                        <div class="row " data-toggle="buttons">
+                            <label class="btn btn-default btn-block">
               <input type="checkbox" autocomplete="off" checked>
               23:30
             </label>
-          </div>
-          <div class="row " data-toggle="buttons">
-            <label class="btn btn-default btn-block">
-              <input type="checkbox" autocomplete="off" checked>
-              24:30
-            </label>
-          </div>
+                        </div>
 
+
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xs-1"></div>
+
+            <!-- >>>> category column start -->
+
+            <div class="col-xs-4 catagory_and_date">
+                <h3>Category</h3>
+                <div class="row catagory">
+                        <button class="btn btn-primary btn-block">study</button>
+                        
+                </div>
+                <h3>Date</h3>
+<div class="row date">
+   <input id="datepicker" type="text" class="form-control" value="25/12/2016">
+</div>
+
+            </div>
+            <!-- <<<< category column end -->
 
         </div>
-
-        </div>
-        </div>
-        <div class = "col-xs-1"></div>
-
-<!-- >>>> category column start -->
-
-        <div class="col-xs-4">
-          <div class="row">
-            <h3>Category</h3>
-          </div>
-          <div class = "row">
-            <button class = "btn btn-primary btn-block">study</button>
-          </div>
-        </div>
-<!-- <<<< category column end -->
-
-      </div><!-- .row mainpage -->
+        <!-- .row mainpage -->
 
 
-    </div><!-- /.container -->
+    </div>
+    <!-- /.container -->
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-    <script src="{{ url_for('static',filename='js/bootstrap.min.js')}}" ></script>
+    <script src="{{ url_for('static', filename='./js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='./js/bootstrap-datepicker.js')}}"></script>
+
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./assets/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
+
+<script>
+    $(document).ready(function() {
+        $('#datepicker').datepicker({
+            format: "dd/mm/yyyy",
+            todayBtn: "linked",
+            keyboardNavigation: false,
+            autoclose: true,
+            todayHighlight: true
+        }).on("changeDate", function(e) {
+            alert("Date Changed!");
+        });
+    });
+</script>
+
+</body>
+
 </html>
