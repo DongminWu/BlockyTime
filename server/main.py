@@ -58,13 +58,13 @@ if __name__ == '__main__':
     debug_msg("             BlockyTime Version: "+str(config.getConfig("version")))
     debug_msg("**********************************************")
 
-    ModelMainPage().get_Date(datetime.date(2016,12,28));
+    print(ModelMainPage().get_Date(datetime.date(2016,12,28)))
     ModelMainPage().get_Blocks_from_date_id(0)
     ModelMainPage().get_Second_Category_from_id(0)
     ModelMainPage().get_Primary_Category_from_id(0)
     ModelMainPage().get_all_Category()
-    ModelMainPage().get_block_info_from_date(datetime.date(2016,12,28));
+    print(ModelMainPage().get_block_info_from_date(datetime.date(2016,12,30)))
 
 
-    init_app.run(debug=True)
+    init_app.run(host='0.0.0.0',debug=True)
 
