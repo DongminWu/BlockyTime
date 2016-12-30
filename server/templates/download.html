@@ -65,7 +65,7 @@
                 <div class="row">
                     <div class="col-xs-6 hour-column">
                       {%for n in range(24)%}
-                        <div class="row timebutton" id="" position="{{n}}" data-toggle="buttons">
+                        <div class="row timebutton" id="" position="{{n*2}}" data-toggle="buttons">
                             <label class="btn btn-default btn-block">
                                 <input type="checkbox" autocomplete="off" checked><span>{{n}}</span>
                             </label>
@@ -75,9 +75,9 @@
 
                     <div class="col-xs-6 halfhour-column">
                       {%for n in range(24)%}
-                      <div class="row timebutton" id="" position="{{n*2}}" data-toggle="buttons">
+                      <div class="row timebutton" id="" position="{{n*2+1}}" data-toggle="buttons">
                             <label class="btn btn-default btn-block">
-                                <input type="checkbox" autocomplete="off" checked><span>{{n}}</span>
+                                <input type="checkbox" autocomplete="off" checked><span>{{n*2+1}}</span>
                             </label>
                         </div>
                       {%endfor%}
@@ -146,7 +146,7 @@
     <script src="./assets/js/ie10-viewport-bug-workaround.js"></script>
 
 <script>
-    site_url = "http://localhost:5000/"
+    site_url = "http://192.168.2.101:5000/"
 
 
     var ajax_result = null
