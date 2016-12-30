@@ -207,6 +207,10 @@
       string_data= JSON.stringify(block_list)
       console.log(string_data)
       $.post(Block_url,{data:string_data},function(e){},"json")
+
+      //after post
+
+      $(".timebutton").children(".active").removeClass("active")
     }
 
     function get_Date_info(date,update_func)
@@ -251,6 +255,19 @@
 
             // get_Date_info(get_Date(),update_time_button);
         });
+
+        $('.second_category').each(
+          function () {
+            $(this).click(
+              function ()
+              {
+                upload_blocks(parseInt($(this).attr("id")))
+                get_Date_info(get_Date(),update_time_button);
+              }
+            )
+
+          }
+        )
 
 
 

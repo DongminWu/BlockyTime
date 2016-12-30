@@ -46,7 +46,7 @@ def test_import():
     from ModelMainPage import ModelMainPage
 
 
-@init_app.route('/')
+@init_app.route('/',methods=['GET','POST','OPTIONS'])
 def index():
     return view.generatePage();
 
