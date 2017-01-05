@@ -9,10 +9,44 @@ from Utilities import debug_msg
 
 db = Initialization().get_global_db();
 
+class Users(db.Model):
+    __tablename__ = 'Users'
+    uid = db.Column(db.Integer,primary_key = True)
+    nick_name = db.Column(db.String(64))
+    password = db.Column(db.String(64))
+
+
+    #uid_foreignkey = db.relationship('Second_Category',backref='primary_category')
+
+
+    @property
+    def serialize(self):
+        return {
+            'uid'                :   self.uid,
+            'nick_name'          :   self.nick_name,
+            'password'           :   self.password
+        }
+
+
+    @staticmethod
+    def generate_fake_data():
+            uid = Users.query.count()
+            nick_name = "fake_User"
+            password = "1234abcd"
+            new_user = Users(uid = uid, nick_name=nick_name,password=password)
+            db.session.add(new_user)
+            db.session.commit()
+            return uid
+
+    def __repr__(self):
+        return '<Users %r>' % self.id
+
+
 class Primary_Category(db.Model):
     __tablename__ = 'Primary_Category'
     id = db.Column(db.Integer, primary_key = True)
-    name = db.Column(db.Unicode(64))
+    uid = db.Column(db.Integer)
+    name = db.Column(db.String(64))
     color = db.Column(db.String(16))
     logo = db.Column(db.String(1024))
     second_category = db.relationship('Second_Category',backref='primary_category')
@@ -21,9 +55,24 @@ class Primary_Category(db.Model):
     def serialize(self):
         return {
             'id'                :   self.id,
+            'uid'                :   self.uid,
             'name'              :   self.name,
             'color'             :   self.color
         }
+
+    @staticmethod
+    def generate_fake_data(uid):
+        if uid != None:
+            id = Primary_Category.query.count()
+            name = "fake_Pri"
+            color = "#567"
+            logo = "fake.png"
+            new_pri = Primary_Category(id = id,uid= uid, name=name,color=color,logo=logo)
+            db.session.add(new_pri)
+            db.session.commit()
+            return id
+        else:
+            return None
 
     def __repr__(self):
         return '<Primary_Category %r>' % self.id
@@ -32,8 +81,9 @@ class Primary_Category(db.Model):
 class Second_Category(db.Model):
     __tablename__ = 'Second_Category'
     id = db.Column(db.Integer, primary_key = True)
+    uid = db.Column(db.Integer)
     primary_id = db.Column(db.Integer, db.ForeignKey('Primary_Category.id'))
-    name = db.Column(db.Unicode(64))
+    name = db.Column(db.String(64))
     color = db.Column(db.String(16))
     logo = db.Column(db.String(1024))
     blocks = db.relationship('Blocks',backref = 'second_category')
@@ -42,11 +92,26 @@ class Second_Category(db.Model):
     def serialize(self):
         return {
             'id'                :   self.id,
+            'uid'                :   self.uid,
             'primary_id'        :   self.primary_id,
             'name'              :   self.name,
             'color'             :   self.color
         }
 
+    @staticmethod
+    def generate_fake_data(uid,primary_id):
+        if uid != None:
+            id = Second_Category.query.count()
+            primary_id = primary_id
+            name = "fake_Sec"
+            color = "#567"
+            logo = "fake.png"
+            new_sec = Second_Category(id = id, primary_id = primary_id,uid= uid, name=name,color=color,logo=logo)
+            db.session.add(new_sec)
+            db.session.commit()
+            return id
+        else:
+            return None
     
     def __repr__(self):
         return '<Second_Category %r>' % self.id
@@ -54,6 +119,7 @@ class Second_Category(db.Model):
 class Date(db.Model):
     __tablename__ = 'Date'
     id = db.Column(db.Integer, primary_key = True)
+    uid = db.Column(db.Integer)
     date = db.Column(db.Date)
     last_changed_time = db.Column(db.DateTime)
     blocks = db.relationship('Blocks',backref = 'date')
@@ -63,9 +129,23 @@ class Date(db.Model):
     def serialize(self):
         return {
             'id'                :   self.id,
+            'uid'                :   self.uid,
             'date'              :   self.date,
             'last_changed_time' :   self.last_changed_time
         }
+
+    @staticmethod
+    def generate_fake_data(uid):
+        if uid != None:
+            id = Date.query.count()
+            date = datetime.date.today()
+            last_changed_time = datetime.datetime.now()
+            new_sec = Date(id = id, uid= uid, date=date,last_changed_time=last_changed_time)
+            db.session.add(new_sec)
+            db.session.commit()
+            return id
+        else:
+            return None
 
     def __repr__(self):
         return '<Date %r>' % self.id
@@ -74,6 +154,7 @@ class Date(db.Model):
 class Blocks(db.Model):
     __tablename__ = 'Blocks'
     id = db.Column(db.Integer, primary_key = True)
+    uid = db.Column(db.Integer)
     date_id = db.Column(db.Integer,db.ForeignKey('Date.id'))
     display_time = db.Column(db.String(16))
     position = db.Column(db.Integer)
@@ -83,11 +164,47 @@ class Blocks(db.Model):
     def serialize(self):
         return {
             'id'                :   self.id,
+            'uid'                :   self.uid,
             'date_id'           :   self.date_id,
             'display_time'      :   self.display_time,
             'position'          :   self.position,
             'second_category_id':   self.second_category_id
         }
+
+    @staticmethod
+    def get_block_from_date_id(self,date_id,uid):
+        ret = Blocks.query.filter_by(date_id = date_id,uid=uid).all()
+        return ret
+
+    @staticmethod
+    def update_a_block(self,id,uid,second_category_id):
+        ret = Blocks.query.filter_by(id = id,uid= uid).first()
+        if ret == None:
+            return None
+        else:
+            ret.second_category_id = second_category_id
+            db.session.add(ret)
+            db.session.commit()
+
+    @staticmethod
+    def create_empty_blocks(uid,date_id,second_category_id):
+        new_block = {}
+        new_blocks_start_id = Blocks.query.count()
+        for index in range(new_blocks_start_id, new_blocks_start_id+48):
+            pos = index - new_blocks_start_id
+            display_time = "%02d:%02d" % (pos/2, (pos%2)*30)
+            new_block[pos] = Blocks(id = index,date_id =date_id,\
+                               display_time = display_time,\
+                              position = pos,\
+                               second_category_id = second_category_id \
+                              )
+            db.session.add(new_block[pos])
+        db.session.commit()
+        return 0
+
+    @staticmethod
+    def generate_fake_data(uid,date_id,second_category_id):
+        return Blocks.create_empty_blocks(uid,date_id,second_category_id)
 
     def __repr__(self):
         return '<Blocks %r>' % self.id
@@ -104,18 +221,20 @@ class ModelMainPage:
             debug_msg(">>> %s.%s" %( __name__,sys._getframe().f_code.co_name))
             self.db = db
             db.create_all();
+            debug_msg("Users: %d" % Users.query.count())
             debug_msg("Primary_Category: %d" % Primary_Category.query.count())
             debug_msg("Second_Category: %d" % Second_Category.query.count())
             debug_msg("Date: %d" % Date.query.count())
             debug_msg("Blocks: %d" % Blocks.query.count())
-            #new_pri_cata = Primary_Category(id = 0, name = u"test", color = 0,logo = "yo") new_sec_cata = Second_Category(id = 0, name = u"test", color = 0, logo = "hello", primary_id = 0)
-            
-            #following codes are only used for testing
-            '''
-            self.db.session.add(new_pri_cata)
-            self.db.session.add(new_sec_cata)
-            self.db.session.commit()
-            '''
+            return 0;
+        def generate_fake_data(self):
+            uid = Users.generate_fake_data();
+            pri_id = Primary_Category.generate_fake_data(uid)
+            sec_id = Second_Category.generate_fake_data(uid,pri_id)
+            date_id = Date.generate_fake_data(uid)
+            Blocks.generate_fake_data(uid,date_id,sec_id)
+            return 0;
+
 
         def update_last_changed_date(self,date_id):
             if date_id is None:
@@ -223,7 +342,7 @@ class ModelMainPage:
         def get_Second_Category_from_id(self,id):
             debug_msg(">>> %s.%s" %( __name__,sys._getframe().f_code.co_name))
             info = Second_Category.query.filter_by(id = id).all()
-            if info is None:
+            if (info == []):
                 debug_msg("cannot find Second_Category item of this date id %d" % id)
                 return None
             if len(info) > 1:
@@ -235,7 +354,7 @@ class ModelMainPage:
         def get_Primary_Category_from_id(self,id):
             debug_msg(">>> %s.%s" %( __name__,sys._getframe().f_code.co_name))
             info = Primary_Category.query.filter_by(id = id).all()
-            if info is None:
+            if info == []:
                 debug_msg("cannot find Primary_Category item of this date id %d" % id)
                 return None
             if len(info) > 1:

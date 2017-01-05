@@ -328,3 +328,80 @@ met a weird 405 http issue, at last find it is not the problem of CORS.
 
 ----
 
+
+##01. 05
+
+Happy new year!
+
+Goal: To add flask manager, mutiple users
+
+
+**Primary-Category**
+
+uid|id|Category name | color set		| logo |
+|----|---|------------- | -------------	|---|
+|0|0|Sport		  | red|a.png
+|0|1|study  | green|b.png
+
+**second-Category**
+
+uid|id|parent_id|category name | color| logo|
+|---|---|---|---|---|---|---|
+|0|0|joging|origin|jog.png|
+
+
+**date**
+
+|uid|id|date|last-changed-time|
+|---|---|---|---|
+|0|0|12-28-2016|01-01-2016 20:00|
+
+**Block**
+
+|uid|id|date_id|show_time|position|second-category-shid|
+|---|---|---|---|----|----|---|
+|0|0|2|12:30|12|3
+
+
+
+**users**
+
+| uid| nick_name| password|
+|---|---|---|
+|1|abc|abcdefg|
+
+
+---
+ 
+ 
+I can use User.query.get(id) to get an item of a table
+
+
+>get(ident)
+>
+>Return an instance based on the given primary key identifier, or None if not found.
+
+>E.g.:
+>
+>```
+>
+>my_user = session.query(User).get(5)
+
+>some_object = session.query(VersionedFoo).get((5, 10))
+>
+>```
+
+----
+
+good git repo of flask app
+
+[viprs/FlaskyBlog](https://github.com/viprs/FlaskyBlog/blob/master/manage.py)
+
+---
+
+
+
+
+
+
+
