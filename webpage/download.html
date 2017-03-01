@@ -15,8 +15,8 @@
     <link href="./css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="./css/main.css" rel="stylesheet">
     <link href="./css/bootstrap-datepicker.css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
 
     <style>
 
@@ -60,8 +60,22 @@
         <div class="row placeholder">
 
         </div>
+
+
+        <div class="row date_row">
+
+            <div class="col-xs-4">
+                Date
+            </div>
+            <div class="col-xs-8">
+                <input id="datepicker" type="text" class="form-control" value="25/12/2016" /> </div>
+
+        </div>
+
         <div class="row mainpage">
-            <div class="col-xs-6 timetable">
+
+
+            <div class="col-sm-7 timetable">
                 <div class="row">
                     <div class="col-xs-6 hour-column">
                         <div class="row " data-toggle="buttons">
@@ -387,51 +401,56 @@
 
                 </div>
             </div>
-            <div class="col-xs-1"></div>
 
+            <div class="col-xs-1">
+            </div>
             <!-- >>>> category column start -->
-
-            <div class="col-xs-4 catagory_and_date">
+            <div class="col-sm-4 catagory_and_date">
                 <h3>Category</h3>
                 <div class="row catagory">
                     <ul>
                         <li>
-                            <button class="btn btn-primary btn-block" style="background-color:#123;">study</button>
+                            <button class="btn btn-primary btn-block primary_category" style="background-color:#123;">study</button>
                             <ul>
-                                <li>hello</li>
+                                <li>
+                                    <button class="btn btn-primary btn-block second_category" style="background-color:#456">English Study</button>
+
+                                </li>
+                                <li>
+                                    <button class="btn btn-primary btn-block second_category" style="background-color:#456">Programming Study</button>
+
+                                </li>
                             </ul>
                         </li>
-                         <li>
+                        <li>
                             <button class="btn btn-primary btn-block">study</button>
                         </li>
-                        
-                    
-                    
+
+
+
                     </ul>
-                        <button class="btn btn-primary btn-block">study</button>
-                        <button class="btn btn-primary btn-block">study</button>
-                        <button class="btn btn-primary btn-block">study</button>
-                        <button class="btn btn-primary btn-block">study</button>
-                        <button class="btn btn-primary btn-block">study</button>
-                        <button class="btn btn-primary btn-block">study</button>
-                        <button class="btn btn-primary btn-block">study</button>
-                        <button class="btn btn-primary btn-block">study</button>
-                        <button class="btn btn-primary btn-block">study</button>
-                        <button class="btn btn-primary btn-block">study</button>
-                        <button class="btn btn-primary btn-block">study</button>
-                        <button class="btn btn-primary btn-block">study</button>
-                        <button class="btn btn-primary btn-block">study</button>
-                        <button class="btn btn-primary btn-block">study</button>
-                        <button class="btn btn-primary btn-block">study</button>
+                    <button class="btn btn-primary btn-block">study</button>
+                    <button class="btn btn-primary btn-block">study</button>
+                    <button class="btn btn-primary btn-block">study</button>
+                    <button class="btn btn-primary btn-block">study</button>
+                    <button class="btn btn-primary btn-block">study</button>
+                    <button class="btn btn-primary btn-block">study</button>
+                    <button class="btn btn-primary btn-block">study</button>
+                    <button class="btn btn-primary btn-block">study</button>
+                    <button class="btn btn-primary btn-block">study</button>
+                    <button class="btn btn-primary btn-block">study</button>
+                    <button class="btn btn-primary btn-block">study</button>
+                    <button class="btn btn-primary btn-block">study</button>
+                    <button class="btn btn-primary btn-block">study</button>
+                    <button class="btn btn-primary btn-block">study</button>
+                    <button class="btn btn-primary btn-block">study</button>
 
                 </div>
-                <h3>Date</h3>
-<div class="row date">
-   <input id="datepicker" type="text" class="form-control" value="25/12/2016">
-</div>
+
 
             </div>
             <!-- <<<< category column end -->
+
 
         </div>
         <!-- .row mainpage -->
@@ -447,25 +466,25 @@
     <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/bootstrap-datepicker.js"></script>
-    
-    
+
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./assets/js/ie10-viewport-bug-workaround.js"></script>
-    
-<script>
-    $(document).ready(function() {
-        $('#datepicker').datepicker({
-            format: "dd/mm/yyyy",
-            todayBtn: "linked",
-            keyboardNavigation: false,
-            autoclose: true,
-            todayHighlight: true
-        }).on("changeDate", function(e) {
-            alert("Date Changed!");
+
+    <script>
+        $(document).ready(function() {
+            $('#datepicker').datepicker({
+                format: "dd/mm/yyyy",
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                autoclose: true,
+                todayHighlight: true
+            }).on("changeDate", function(e) {
+                alert("Date Changed!");
+            });
         });
-    });
-</script>
-    
+    </script>
+
 </body>
 
 </html>
