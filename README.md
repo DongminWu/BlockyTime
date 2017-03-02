@@ -48,6 +48,7 @@ build a easy-using time tracking web application
 
 back-end
 
+1. datebase issues on first running
 2. support for multiple users
 
 front-end
@@ -399,6 +400,20 @@ good git repo of flask app
 
 ---
 
+
+03.02
+
+UI improvement
+
+made a static for this application.
+
+met some issue while trying to build a horizontal bar chart.
+
+**how to make div blocks inline**
+
+1. set `white-space: nowrap` and `display:inline`  in ul
+2. set `display:line` for li
+3. set `display: line-block` for div **important!!!**
 
 
 

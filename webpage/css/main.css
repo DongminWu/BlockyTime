@@ -19,21 +19,17 @@
 }
 
 
-
 /*for mobile*/
 
 html,
 body {
     height: 100%;
-    
 }
 
 body .container {
     height: 100%;
-    max-width: 80%
+    max-width: 100%
 }
-
-
 
 .placeholder {
     height: 100%;
@@ -65,23 +61,47 @@ body .container {
     max-height: 80%
 }
 
+.mainpage .statics {
+    height: 30%
+}
+
+.mainpage .chart_horizon {
+    display: none;
+}
+
+.mainpage .chart_vertical {
+    height: 100%;
+    display: block;
+}
+
+.statics_title {
+    max-height: 30%
+}
+
+
 /*for desktop and tablets*/
 
 @media (min-width: 768px) {
-
-
-.mainpage .timetable {
-    max-height: 100%
+    .mainpage .timetable {
+        max-height: 100%
+    }
+    .mainpage .catagory_and_date {
+        max-height: 100%
+    }
+    .mainpage .statics {
+        height: 100%
+    }
+    .mainpage .chart_horizon {
+        display: block;
+        height: 100%
+    }
+    .mainpage .chart_vertical {
+        display: none;
+    }
+    .statics_title {
+        max-height: 6%
+    }
 }
-
-.mainpage .catagory_and_date {
-    max-height: 100%
-}
-
-
-}
-
-
 
 body {
     position: relative;
@@ -96,41 +116,36 @@ body {
     background-color: #fff;
 }
 
-
 .halfhour-column .row label.active {
     background-color: #e6e6e6;
 }
+
 .halfhour-column .row label:active,
 .halfhour-column .row label.active {
-  background-image: none;
-  outline: 0;
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
-          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
 }
-
-
 
 .halfhour-column .row {
     padding: 1px 1px 1px 1px
 }
 
-
-
-
 .hour-column .row label {
     background-color: #fff;
 }
 
-
 .hour-column .row label.active {
     background-color: #e6e6e6;
 }
+
 .hour-column .row label:active,
 .hour-column .row label.active {
-  background-image: none;
-  outline: 0;
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
-          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
 }
 
 .hour-column .row {
@@ -143,13 +158,13 @@ body {
 }
 
 .catagory_and_date {
-    max-height:  100%;
+    max-height: 100%;
 }
 
 .catagory_and_date .catagory {
-    max-height: %;
     overflow: scroll
 }
+
 
 /*btn overwrite*/
 
@@ -162,23 +177,90 @@ body {
 .halfhour-column .row label.active.focus,
 .halfhour-column .row label.active:focus,
 .halfhour-column .row label:active.focus,
-.halfhour-column .row label:active:focus
-{
+.halfhour-column .row label:active:focus {
     border-color: #fff
 }
 
 
 /*font size*/
-.catagory button,
-.mainpage label{
-        font-size: 1.5em
-    }
 
-@media (min-width:768px)
-{
+h3 {
+    text-transform: uppercase
+}
+
+.catagory button,
+.mainpage label {
+    font-size: 1.5em
+}
+
+@media (min-width:768px) {
     .catagory button,
-    .mainpage label{
+    .mainpage label {
         font-size: 1em
     }
-    
 }
+
+
+/*static charts*/
+
+.chart_plane {
+    padding-left: 0px;
+    height: 100%;
+}
+
+.chart_bar_horizon {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding: 0px;
+    height: 4em;
+    background-color: #123;
+    width: 70%;
+    float: left
+}
+
+.chart_text_horizon {
+    text-align: center;
+    height: 4em
+}
+
+.chart_text_horizon p {
+    margin: auto;
+    padding-top: 1.25em
+}
+
+.chart_horizon {
+    overflow: scroll;
+    max-height: 94%
+}
+
+
+/*vertical*/
+.chart_vertical
+{
+    height: 100%;
+    max-height: 75%;
+    overflow: scroll;
+}
+
+.chart_item_vertical
+{
+    width:4em;
+    height: 100%;
+    float: left;
+}
+
+.chart_empty_vertical
+{
+    height: 20%;
+}
+
+.chart_text_vertical
+{
+    text-align: center;
+}
+.chart_bar_vertical
+{
+    height: 70%;
+    background-color: #123;
+}
+
