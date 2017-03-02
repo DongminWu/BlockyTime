@@ -155,15 +155,19 @@ body {
 .timetable {
     max-height: 100%;
     overflow: scroll;
+    overflow-x: hidden;
 }
+.timetable::-webkit-scrollbar {display:none}
 
 .catagory_and_date {
     max-height: 100%;
 }
 
 .catagory_and_date .catagory {
-    overflow: scroll
+    overflow: scroll;
+    overflow-x: hidden;
 }
+.catagory_and_date .catagory::-webkit-scrollbar {display:none}
 
 
 /*btn overwrite*/
@@ -232,6 +236,7 @@ h3 {
     overflow: scroll;
     max-height: 94%
 }
+//.chart_horizon::-webkit-scrollbar {display:none}
 
 
 /*vertical*/
@@ -239,14 +244,50 @@ h3 {
 {
     height: 100%;
     max-height: 75%;
+    
     overflow: scroll;
+    overflow-y: hidden;
+}
+
+.chart_vertical::-webkit-scrollbar {display:none}
+
+.chart_plane_vertical
+{
+    
+    padding-left: 0px;
+    height: 90%;
+    display: block;
+    white-space: nowrap;
+    position: relative;
+/*    width: 10000000px*/
+}
+
+.chart_plane_vertical ul
+{
+    list-style-type: none;
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+    white-space: nowrap;
+}
+
+.chart_plane_vertical li
+{
+    list-style-type: none;
+    display: inline;
 }
 
 .chart_item_vertical
 {
+    
+    margin-left: 0px;
+    padding-left: 0px;
     width:4em;
     height: 100%;
-    float: left;
+    margin-left: 1px;
+    margin-right: 1px;
+    display: inline-block;
+    white-space: nowrap;
 }
 
 .chart_empty_vertical

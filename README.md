@@ -417,6 +417,11 @@ met some issue while trying to build a horizontal bar chart.
 
 
 
+[original article](https://segmentfault.com/a/1190000002724978)
+
+
+**[hide scroll bar in webkit](https://blog.niceue.com/front-end-development/hide-scrollbar-but-still-scrollable-using-css.html)**
+
 
 
 
