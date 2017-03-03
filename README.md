@@ -24,6 +24,11 @@ build a easy-using time tracking web application
 
 ##UI
 
+### V1.0 version
+
+![](./img/2017-03-03-22-39-21.png)
+
+
 
 ### V0.1 version
 
@@ -401,7 +406,7 @@ good git repo of flask app
 ---
 
 
-03.02
+##03.02
 
 UI improvement
 
@@ -424,4 +429,8 @@ met some issue while trying to build a horizontal bar chart.
 
 
 
+---
 
+##03.03
+
+do not use `height:80%`. the better way to set presentage height is `height:100%;max-height:80%`
