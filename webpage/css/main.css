@@ -207,6 +207,12 @@ h3 {
 
 /*static charts*/
 
+.statics .statics_title
+{
+    height: 30%;
+}
+
+
 .chart_plane {
     padding-left: 0px;
     height: 100%;
@@ -243,13 +249,13 @@ h3 {
 .chart_vertical
 {
     height: 100%;
-    max-height: 75%;
+    max-height: 70%;
     
     overflow: scroll;
     overflow-y: hidden;
 }
 
-.chart_vertical::-webkit-scrollbar {display:none}
+/*.chart_vertical::-webkit-scrollbar {display:none}*/
 
 .chart_plane_vertical
 {
@@ -298,10 +304,11 @@ h3 {
 .chart_text_vertical
 {
     text-align: center;
+    height: 20%
 }
 .chart_bar_vertical
 {
-    height: 70%;
+    height: 60%;
     background-color: #123;
 }
 
