@@ -648,17 +648,33 @@ return
 ####Data Controller
 
 
+
 ```
 
 class Block
 {
 	@properties
-	int id,
-	int Primary_category_id,
-	int Second_category_id,
+	int block_id,
+	PrimaryCategory Primary_category_id,
+	SecondCategory Second_category,
 	
 	@methods
 	int set_second_category
+}
+
+```
+
+```
+class Date
+{
+	@properties
+	int date_id
+	string last_change_time
+	Block[] blocks
+	
+	@method
+	int generate_empty_date
+	
 }
 
 ```
@@ -684,16 +700,32 @@ class PrimaryCategory:Category
 {
 	@properties
 	int primary_id
-	int[] second_categories
+	SecondCategory[] second_categories
 	
 	@method
 	int remove_this
-	SecondCategory get_child()
+	SecondCategory get_child_by_id()
+	SecondCategory get_child_by_name()
+	
 	
 
 }
 ```
 
+```
+class SecondCategory:Category
+{
+	@property
+	int second_id
+	PrimaryCategory primary_category
+	
+	@method
+	int remove_this
+	PrimaryCategory get_parent()
+}
+
+
+```
 
 ----
 
