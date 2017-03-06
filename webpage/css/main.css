@@ -198,6 +198,15 @@ h3 {
     border-style: solid;
     margin-bottom: 0.5em;
 }
+.catagory_title:active
+{
+    background-color: #e6e6e6;
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+
+}
 
 .catagory_title h3 {
     text-align: center;

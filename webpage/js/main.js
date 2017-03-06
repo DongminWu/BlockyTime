@@ -18,6 +18,16 @@ function SwitchTimetableAndCategory() {
 
 }
 
+function SelectActivedTimetableItem(e) {
+    //    console.log($(".timetable_plane").find("label").text());
+    $(".timetable_plane").find(".active").each(
+        function () {
+            e($(this));
+        });
+
+
+}
+
 $(document).ready(function () {
     $(".primary_category").siblings("ul").hide();
 
@@ -32,7 +42,12 @@ $(document).ready(function () {
     })
 
     $(".second_category").click(function () {
+        SelectActivedTimetableItem(function (e) {
+            e.removeClass("active");
+        });
         $(this).parent().parent("ul").slideUp("fast");
+
+
         //        console.log($(this).parent("ul"));
     })
 
