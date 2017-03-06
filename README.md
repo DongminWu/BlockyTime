@@ -434,3 +434,276 @@ met some issue while trying to build a horizontal bar chart.
 ##03.03
 
 do not use `height:80%`. the better way to set presentage height is `height:100%;max-height:80%`
+
+---
+
+##03.05
+
+###refining requirements
+
+1. multiple users
+	1. User interface: login page and sign in page
+	2. !!!Backend: re-organizing the database
+	3. Behavior:
+		1. Users can sign up for a new account
+		2. Users can sign up a new account with an email
+		3. Users can login to their account with email name & password
+		4. Users can log out their account on setting page
+		5. Users are able to change the password on setting page
+		6. Users can login as a guest accout, for demo.
+2. users can modify categories
+	1. UI: setting page
+	2. Behaviors:
+		1. Users can view all categories on setting page
+		2. on default, all categories are marked as "no records?" or other name
+		3. Users can remove a primary category,
+			1.  User will receive a warnning.
+			2. if they do that, all blocks with that category turn to "no records"
+		4. Users can add a new primary category.
+			1. every primary category always have an item "other", which is unable to be remove
+		5. Users are able to remove a second category 
+			1. User will receive a warnning.
+			2. after removing, there is no influence for primary categories.
+			3. change all blocks with the same category name to "other"
+		6. Users can add a new second category
+		7. About add operation:
+			1. The user must give a valid name to a category
+			2. The user must assign a new color to a category
+			3. *Optional*: user need to add a icon for the category
+				1. Think: what design pattern should I use in case of more requirement.
+		6. Users can change the sequence of all categories.
+		7. Users can change the name and color of all categories.
+3. data analysis and display
+	1. UI: display page
+	2. Behavior:
+		1. Users can view the data in different charts:
+			1. *Optional*:pie chart
+			2. bar chart
+				1. The sequence of bars will be adjusted according to the presentage.
+			3. *Optional*:line chart
+		2. For each type of charts, users may be able to set the scope between a day and a year
+		3. As for data, at beginning, users will see the presentage of the primary category.
+		4. users are able to check the detialed information of each primary category.
+		5. Users are able to view the trend of a primary category
+		6. *Optional*: Divide all primary categories into 3 parts: Positive, Neutural, Nagetive. View the trend of them.
+4. Main page:
+	1. Behavior:
+		1. User will see a simple static of today's statics information
+		2. User can jump to another Date to see what happend on that date.
+		3. Users are only able to assign second category to a block
+		4. every primary category have a default second category named "other"
+
+
+###Code Structure of Backend
+
+4 Parts
+
+0. Global Initialization & Utilities
+1. Interface to Fontend
+2. Database Operation 
+3. Data Controller
+
+Calling flow:
+
+Fontend ===query===> Interface ===> data Controller ===> Database
+
+####Interface to Fontend 
+
+**MAIN PAGE**
+
+#####GET: /MainPage/DATE/2017-03-05?uid=UID
+
+return: 
+
+1. UID
+1. Date: 2017-03-05
+2. Blocks: {Block: Primary.secondCategory, Block: Primary.secondCategory.color}
+3. Statics: {Primary:Presentage}
+
+#####POST: /MainPage/Date/2017-03-05/
+
+parameter:
+
+1. UID
+1. Date: 2017-03-05
+2. Blocks: {Block: Primary.secondCategory}
+
+return: same as GET method
+
+**Sign in page**
+
+#####POST: /SIGNIN
+
+parameter:
+
+1. Username
+2. password
+
+return:
+
+1. UID
+1. success 
+2. failed or non-exist user
+
+**Sign up Page**
+
+#####POST: /SIGNUP
+
+parameter:
+
+1. username
+2. password
+
+return:
+
+1. UID
+1. success
+2. failed
+
+**Statics Page**
+
+#####GET: /StaticsPage/Date/2017-03-05?uid=UID
+
+return:
+
+1. UID
+2. Date: 2017-03-05
+3. Statics: {Primary: presentage, primary:hours}
+
+#####GET: /StaticsPage/Month/2017-03?uid=UID
+
+return:
+
+1. UID
+2. Month: 2017-03
+3. Statics: {Primary: presentage, primary:hours}
+
+#####GET: /StaticsPage/Year/2017?uid=UID
+
+return:
+
+1. UID
+2. Date: 2017
+3. Statics: {Primary: presentage,primary: hours}
+
+#####GET: /StaticPage/PrimaryCategory?uid=UID&&primary_category=Primary Category
+
+return:
+
+1. UID
+2. Primary_category {Name, second:{second:persentage, second:hours}}
+
+**Setting Page**
+
+#####GET: /SettingPage/account?uid=UID
+
+return: 
+
+1. UID
+2. account name
+
+
+#####POST: /SettingPage/account/changepassword
+
+parameters
+
+1. UID
+2. old password
+3. new password
+
+return:
+
+1. UID
+2. success
+3. failed
+
+#####POST: /SettingPage/account/logout
+
+parameter:
+
+1. UID
+
+
+return:
+
+1. UID
+2. success/failed
+
+#####GET: /Categories
+
+return
+
+1. UID
+2. categories: {Primary:{second:name, id....}}
+
+>Two solutions: 
+>
+>1. query data on every time
+>2. query the data once, and then renew the data
+
+----
+
+
+
+####Data Controller
+
+
+```
+
+class Block
+{
+	@properties
+	int id,
+	int Primary_category_id,
+	int Second_category_id,
+	
+	@methods
+	int set_second_category
+}
+
+```
+
+```
+class Category
+{
+	@properties
+	int color,
+	int name,
+	
+	@method
+	int set_name
+	int set_color
+	int remove_this
+}
+
+
+```
+
+```
+class PrimaryCategory:Category
+{
+	@properties
+	int primary_id
+	int[] second_categories
+	
+	@method
+	int remove_this
+	SecondCategory get_child()
+	
+
+}
+```
+
+
+----
+
+####Database Operation 
+
+
+
+
+
+
+	
+	
+
