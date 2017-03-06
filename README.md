@@ -731,6 +731,14 @@ class SecondCategory:Category
 
 ####Database Operation 
 
+##3.06
+
+Ineffective all day, used a whole afternoon to fix the issue of the sqlite cannot create database on my computer.
+
+Finally, found it is because I have a typo on database_path
+
+:( got very depressive today..
+
 
 
 
