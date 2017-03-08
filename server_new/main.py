@@ -19,12 +19,24 @@ init_app = Initialization().get_global_app()
 init_db = Initialization().global_create_db(init_app)
 
 
-from DB_Model import *
+
 from DB_Model import database_helper
 db_helper = database_helper.database_helper(init_db)
 db_helper.rebuild_database()
 
 
+from DB_Model.database_tester import database_tester
+
+db_tester = database_tester()
+
+db_tester.generate_fake_data()
+
+db_tester = database_tester()
+
+db_tester.generate_fake_data()
+
+
+db_helper.dump_all_data()
 
 
 '''

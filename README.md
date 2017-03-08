@@ -655,6 +655,7 @@ class Block
 {
 	@properties
 	int block_id,
+	Date
 	PrimaryCategory Primary_category_id,
 	SecondCategory Second_category,
 	
