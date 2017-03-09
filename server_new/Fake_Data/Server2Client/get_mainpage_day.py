@@ -2,7 +2,7 @@ import json
 import datetime
 
 
-get_mainpage_data = {
+get_mainpage_day = {
     'users':
     {
         'uid': 0,
@@ -11,7 +11,7 @@ get_mainpage_data = {
     },
     'date': {'date': "2017-03-08", 'id': 0, 'last_changed_time': "2017-03-08 16:43:32", 'uid': 0},
     'statics': {
-        'Daily':
+        'Day':
         [
             {
                 'primary_id': 0,
@@ -165,4 +165,4 @@ get_mainpage_data = {
 }
 
 
-print(json.dumps(get_mainpage_data))
+print(json.dumps(get_mainpage_day))

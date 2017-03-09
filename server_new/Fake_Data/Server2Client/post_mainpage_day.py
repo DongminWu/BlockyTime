@@ -2,7 +2,7 @@ import json
 import datetime
 
 
-post_mainpage_data = {
+post_mainpage_day = {
     'users':
     {
         'uid': 0,
@@ -112,4 +112,4 @@ post_mainpage_data = {
 }
 
 
-print(json.dumps(post_mainpage_data))
+print(json.dumps(post_mainpage_day))

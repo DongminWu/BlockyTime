@@ -532,6 +532,7 @@ return:
 
 1. user information
 2. new date
+3. blocks
 
 
 
@@ -549,6 +550,7 @@ return:
 1. UID
 1. success 
 2. failed or non-exist user
+3. redirect url
 
 **Sign up Page**
 
@@ -564,10 +566,11 @@ return:
 1. UID
 1. success
 2. failed
+3. redirect url
 
 **Statics Page**
 
-#####GET: /StaticsPage/Date/2017-03-05?uid=UID
+#####GET: /StaticsPage/Day/2017-03-05?uid=UID
 
 return:
 
@@ -634,7 +637,7 @@ return:
 1. UID
 2. success/failed
 
-#####GET: /Categories
+#####GET: /CategoriesPage
 
 return
 
@@ -645,6 +648,8 @@ return
 >
 >1. query data on every time
 >2. query the data once, and then renew the data
+
+#####POST: /CategoriesPage
 
 ----
 
