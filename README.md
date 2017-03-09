@@ -528,7 +528,12 @@ parameter:
 1. Date: 2017-03-05
 2. Blocks: {Block: Primary.secondCategory}
 
-return: same as GET method
+return: 
+
+1. user information
+2. new date
+
+
 
 **Sign in page**
 
