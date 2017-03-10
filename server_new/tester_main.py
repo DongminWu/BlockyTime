@@ -11,7 +11,7 @@ from Initialization import Initialization
 from MyConfig import MyConfig
 from Utilities import debug_msg
 
-Initialization().global_create_app(__name__, None)
+Initialization().global_create_app(__name__,'database/db_tester.sqlite')
 init_app = Initialization().get_global_app()
 #debug_msg("enable CORS")
 #CORS(init_app, send_wildcard=True)
@@ -39,20 +39,8 @@ db_tester.generate_fake_data()
 db_helper.dump_all_data()
 
 
-'''
-datamodel initialization
-'''
-'''
-from ModelMainPage import ModelMainPage, Users, Primary_Category, Second_Category, Date, Blocks
-ModelMainPage().initialize_database(init_db)
 
-from ViewMainPage import ViewMainPage
-view=ViewMainPage()
 
-from ControllerMainPage import ControllerMainPage
-ControllerMainPage().initialize_api()
-
-'''
 
 migrate = Migrate(init_app, init_db)
 
@@ -60,42 +48,23 @@ migrate = Migrate(init_app, init_db)
 manager = Manager(init_app)
 manager.add_command('db', MigrateCommand)
 
-
-'''
-add some env to shell command
-'''
-
-'''
-def my_make_context():
-    return dict(Initialization=Initialization,
-                ModelMainPage=ModelMainPage,
-                ViewMainPage=ViewMainPage,
-                ControllerMainPage=ControllerMainPage,
-                Users=Users,
-                Primary_Category=Primary_Category,
-                Second_Category=Second_Category,
-                Date=Date,
-                Blocks=Blocks)
-
-
-manager.add_command('shell', Shell(make_context=my_make_context))
-
-
-
-
-
-@init_app.route('/', methods=['GET', 'POST', 'OPTIONS'])
-def index():
-    return view.generatePage()
-
-'''
-
 if __name__ == '__main__':
     config = MyConfig()
     debug_msg("**********************************************")
-    debug_msg("           BlockyTime Version: " +
+    debug_msg("           tester main ver: " +
               str(config.getConfig("version")))
     debug_msg("**********************************************")
+
+
+
+    from testing.day_controller_tester import day_controller_tester
+
+    day_controller_testing = day_controller_tester()
+    day_controller_testing.testing_get_date_object_from_string()
+    day_controller_testing.testing_get_date_id_from_string()
+    day_controller_testing.testing_get_last_changed_time_from_string()
+    day_controller_testing.testing_get_date_list()
+    day_controller_testing.testing_update_date_data()
 
     # init_app.run(host='0.0.0.0', debug=True)
     manager.run()

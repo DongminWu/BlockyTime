@@ -12,16 +12,23 @@ class Initialization:
         db = None
         config = MyConfig()
 
-        def global_create_app(self, name):
+        def global_create_app(self, name, db_path):
             basedir = os.path.abspath(os.path.dirname(__file__))
             if (name == None):
                 debug_msg("Warning: no app name!")
                 name = '__main__'
 
             app = Flask(name)
-            database_path = 'sqlite:///' + \
-                os.path.join(basedir, self.config.getConfig('database_path'))
-            debug_msg("----database_path---: "+database_path)
+
+            if db_path is None:
+                database_path = 'sqlite:///' + \
+                    os.path.join(
+                        basedir, self.config.getConfig('database_path'))
+            else:
+                database_path = 'sqlite:///' + \
+                    os.path.join(
+                        basedir, db_path)
+            debug_msg("----database_path---: " + database_path)
             app.config['SQLALCHEMY_DATABASE_URI'] = database_path
             debug_msg(app.config['SQLALCHEMY_DATABASE_URI'])
             app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
