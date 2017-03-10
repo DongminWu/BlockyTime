@@ -61,6 +61,7 @@ if __name__ == '__main__':
 
     day_controller_testing = day_controller_tester()
     day_controller_testing.testing_get_date_object_from_string()
+    day_controller_testing.testing_get_date_object_from_id()
     day_controller_testing.testing_get_date_id_from_string()
     day_controller_testing.testing_get_last_changed_time_from_string()
     day_controller_testing.testing_get_date_list()
