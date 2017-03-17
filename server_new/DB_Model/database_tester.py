@@ -9,6 +9,7 @@ from DB_Model.database_model import Users, Date, Blocks, Primary_Category, Secon
 from DB_Model.database_helper import database_helper
 from Initialization import Initialization
 
+
 class database_tester(object):
     '''
     testing class
@@ -75,3 +76,31 @@ class database_tester(object):
                                     secondary_category_id=self.secondary_id,
                                     primary_category_id=self.primary_id)
             self.helper.update_data(new_block[pos])
+
+    def generate_fake_primary_category(self):
+        '''
+        return primary id
+        '''
+        primary_id = Primary_Category.query.count()
+        primary_name = 'fake_category' + str(primary_id)
+        primary_color = '#f23456'
+        primary_logo = './logo' + str(primary_id) + '.png'
+        new_primary = Primary_Category(
+            id=primary_id, uid=self.uid, name=primary_name,
+            color=primary_color, logo=primary_logo)
+        self.helper.update_data(new_primary)
+        return primary_id
+
+    def generate_fake_secondary_category(self, primary_id):
+        '''
+        :)
+        '''
+        secondary_id = Secondary_Category.query.count()
+        secondary_name = 'fake_secondary' + str(secondary_id)
+        secondary_color = "#b33321"
+        secondary_logo = './logo' + str(secondary_id) + '.png'
+        new_secondary = Secondary_Category(
+            id=secondary_id, uid=self.uid, primary_id=primary_id,
+            name=secondary_name, color=secondary_color, logo=secondary_logo)
+        self.helper.update_data(new_secondary)
+        return secondary_id

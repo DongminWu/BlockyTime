@@ -24,14 +24,14 @@ class day_controller(object):
         debug_msg(">>> %s.%s" % (__name__, sys._getframe().f_code.co_name))
         self.date = None
         if date_string != None:
-            self.date = self.query_date_from_string(date_string, user_id)
+            self.date = self.__query_date_from_string(date_string, user_id)
         if id != None:
-            self.date = self.query_date_from_id(id, user_id)
+            self.date = self.__query_date_from_id(id, user_id)
 
         self.database = Initialization().get_global_db()
         self.db_helper = database_helper(self.database)
 
-    def query_date_from_id(self, id, user_id):
+    def __query_date_from_id(self, id, user_id):
         '''
         return a Date object after quering the Datebase
         '''
@@ -41,7 +41,7 @@ class day_controller(object):
         else:
             return info[0]
 
-    def query_date_from_string(self, date_string, user_id):
+    def __query_date_from_string(self, date_string, user_id):
         '''
         return a Date object after quering the Datebase
         '''
