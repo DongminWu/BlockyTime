@@ -3,7 +3,6 @@ from flask import request
 from flask_restful import Resource, Api
 
 from Initialization import Initialization
-from ModelMainPage import ModelMainPage
 
 from Utilities import debug_msg
 

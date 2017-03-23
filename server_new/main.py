@@ -49,10 +49,10 @@ ModelMainPage().initialize_database(init_db)
 from ViewMainPage import ViewMainPage
 view=ViewMainPage()
 
-from ControllerMainPage import ControllerMainPage
-ControllerMainPage().initialize_api()
-
 '''
+from RESTful_Interface import RESTful_Interface
+RESTful_Interface().initialize_api()
+
 
 migrate = Migrate(init_app, init_db)
 
@@ -97,5 +97,5 @@ if __name__ == '__main__':
               str(config.getConfig("version")))
     debug_msg("**********************************************")
 
-    # init_app.run(host='0.0.0.0', debug=True)
+    init_app.run(host='0.0.0.0', debug=True)
     manager.run()

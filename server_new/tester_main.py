@@ -72,5 +72,21 @@ if __name__ == '__main__':
     category_controller_testing.testing_get_secondary_object_from_id()
     category_controller_testing.testing_get_category_list()
 
+    from testing.users_controller_tester import users_controller_tester
+    users_controller_testing = users_controller_tester()
+    users_controller_testing.testing_get_user_list()
+    users_controller_testing.testing_sign_in()
+    users_controller_testing.testing_sign_up()
+    users_controller_testing.testing_reset_password()
+
+
+    from testing.statistic_controller_tester import statistic_controller_tester
+    statistic_controller_testing = statistic_controller_tester()
+    statistic_controller_testing.testing_get_statistic_list_day()
+
+    from testing.blocks_controller_tester import blocks_controller_tester
+    blocks_controller_testing = blocks_controller_tester()
+    blocks_controller_testing.testing_get_blocks_list_of_a_day()
+    blocks_controller_testing.testing_update_a_block()
     # init_app.run(host='0.0.0.0', debug=True)
     manager.run()

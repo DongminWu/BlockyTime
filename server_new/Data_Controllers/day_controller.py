@@ -17,6 +17,7 @@ class day_controller(object):
     2. get date object for a day
     2. renew a day
         In this case, the last_changed_time should be updated
+    *3. create an empty day with default day setting
 
     '''
 
@@ -89,7 +90,7 @@ class day_controller(object):
         '''
         update other data of this day
         '''
-        #(2017.03.10)in this version, no data should update
+        #(2017.03.10)in this version, only update last change time
         data = data
         if self.date is None:
             return self.date

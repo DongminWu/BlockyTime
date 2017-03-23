@@ -511,7 +511,7 @@ Fontend ===query===> Interface ===> data Controller ===> Database
 
 **MAIN PAGE**
 
-#####GET: /MainPage/DATE/2017-03-05?uid=UID
+#####GET: /MainPage/uid/DATE/2017-03-05
 
 return: 
 

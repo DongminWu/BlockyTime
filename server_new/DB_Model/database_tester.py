@@ -36,7 +36,7 @@ class database_tester(object):
         self.secondary_logo = './secondary_logo.png'
 
         self.date_id = Date.query.count()
-        self.date_date = datetime.date.today()
+        self.date_date = datetime.date(2017,3,10)
         self.date_last_changed_time = datetime.datetime.now()
 
         self.blocks_id = Blocks.query.count()
@@ -104,3 +104,9 @@ class database_tester(object):
             name=secondary_name, color=secondary_color, logo=secondary_logo)
         self.helper.update_data(new_secondary)
         return secondary_id
+
+    def generate_fake_user(self, nick_name='fake_nickname', password='abc'):
+        new_uid = Users.query.count()
+        new_User = Users(uid=new_uid, nick_name=nick_name, password=password)
+        self.helper.update_data(new_User)
+        return new_uid

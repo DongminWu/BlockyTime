@@ -2,14 +2,14 @@ import json
 import datetime
 
 
-get_staticspage_day = {
+get_statisticspage_day = {
     'users':
     {
         'uid': 0,
         'nick_name': 'pipicold'
 
     },
-    'statics': {
+    'statistics': {
         'Day':
         [
             {
@@ -65,4 +65,4 @@ get_staticspage_day = {
 }
 
 
-print(json.dumps(get_staticspage_day))
+print(json.dumps(get_statisticspage_day))
