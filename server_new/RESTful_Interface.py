@@ -44,7 +44,7 @@ class mainpage_date(Resource):
         return ret
 
     def post(self):
-        return 'hello'
+        pass
 
 
 class Resource_Date(Resource):

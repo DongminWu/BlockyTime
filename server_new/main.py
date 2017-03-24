@@ -31,10 +31,24 @@ db_tester = database_tester()
 
 db_tester.generate_fake_data()
 
-db_tester = database_tester()
 
-db_tester.generate_fake_data()
+from Data_Controllers.blocks_controller import blocks_controller
 
+new_pri = db_tester.generate_fake_primary_category()
+new_sec = db_tester.generate_fake_secondary_category(new_pri)
+new_sec = db_tester.generate_fake_secondary_category(new_pri)
+new_sec = db_tester.generate_fake_secondary_category(new_pri)
+new_pri = db_tester.generate_fake_primary_category()
+new_sec = db_tester.generate_fake_secondary_category(new_pri)
+new_sec = db_tester.generate_fake_secondary_category(new_pri)
+new_sec = db_tester.generate_fake_secondary_category(new_pri)
+blocks_con = blocks_controller('0')
+blocks_con.update_a_block(1, 2)
+blocks_con.update_a_block(2, 1)
+blocks_con.update_a_block(3, 4)
+blocks_con.update_a_block(4, 4)
+blocks_con.update_a_block(5, 6)
+blocks_con.update_a_block(6, 5)
 
 db_helper.dump_all_data()
 
@@ -97,5 +111,5 @@ if __name__ == '__main__':
               str(config.getConfig("version")))
     debug_msg("**********************************************")
 
-    init_app.run(host='0.0.0.0', debug=True)
+    init_app.run(host=config.getConfig("host"),port=config.getConfig("port"), debug=True)
     manager.run()
