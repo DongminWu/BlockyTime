@@ -1,0 +1,440 @@
+html,
+body {
+    height: 100%;
+    background-color: white;
+}
+
+body {
+    position: relative;
+}
+
+body .container {
+    height: 100%;
+    max-width: 85%
+}
+
+.placeholder {
+    height: 100%;
+    max-height: 8%
+}
+
+.mainpage {
+    height: 100%;
+    max-height: 84%
+}
+
+
+/*==============date =================*/
+
+.date_row {
+    height: 100%;
+    max-height: 7%
+}
+
+.date_title {
+    height: 100%;
+    /*    background: green;*/
+    text-align: left;
+    padding: 0px;
+}
+
+.date_title h3 {
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+}
+
+.date_picker {
+    padding: 0px;
+}
+
+#datepicker {
+    margin-top: 0.4em;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+
+/*=============time table ==============*/
+
+.mainpage .timetable {
+    height: 100%;
+    max-height: 60%
+}
+
+
+/*for mobile*/
+
+
+/*for desktop and tablets*/
+
+@media (min-width: 768px) {
+    .mainpage .timetable {
+        max-height: 100%
+    }
+}
+
+.starter-template {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+.halfhour-column .row label {
+    background-color: #fff;
+}
+
+.halfhour-column .row label.active {
+    background-color: #e6e6e6;
+}
+
+.halfhour-column .row label:active,
+.halfhour-column .row label.active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+
+.halfhour-column .row {
+    padding: 1px 1px 1px 1px
+}
+
+.hour-column .row label {
+    background-color: #fff;
+}
+
+.hour-column .row label.active {
+    background-color: #e6e6e6;
+}
+
+.hour-column .row label:active,
+.hour-column .row label.active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+
+.hour-column .row {
+    padding: 1px 1px 1px 1px
+}
+
+.timetable .timetable_plane {
+    overflow: scroll;
+    overflow-x: hidden;
+    max-height: 100%;
+    max-width: 100%;
+    border-color: #e4e4e4;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.timetable {
+    padding-bottom: 0.5em;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.timetable_plane::-webkit-scrollbar {
+    display: none
+}
+
+
+/*btn overwrite*/
+
+.btn-default {
+    border-radius: 0px;
+}
+
+.btn-default:active {
+    border-color: #fff;
+}
+
+.hour-column .row label.active,
+.hour-column .row label.active.focus,
+.hour-column .row label.active:focus,
+.hour-column .row label:active.focus,
+.hour-column .row label:active:focus,
+.halfhour-column .row label.active,
+.halfhour-column .row label.active.focus,
+.halfhour-column .row label.active:focus,
+.halfhour-column .row label:active.focus,
+.halfhour-column .row label:active:focus {
+    border-color: #fff
+}
+
+
+/*font size*/
+
+h3 {
+    text-transform: uppercase;
+    margin: 0px;
+}
+
+.catagory button,
+.mainpage label {
+    font-size: 1.5em
+}
+
+@media (min-width:768px) {
+    .catagory button,
+    .mainpage label {
+        font-size: 1em
+    }
+}
+
+
+/*========catagory ==========*/
+
+
+/*common parts*/
+
+.catagory_and_date {
+    max-height: 100%;
+}
+
+.catagory_title {
+    border-color: #e4e4e4;
+    border-width: 1px;
+    border-style: solid;
+    margin-bottom: 0.5em;
+}
+.catagory_title:active
+{
+    background-color: #e6e6e6;
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+
+}
+
+.catagory_title h3 {
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.catagory_and_date .catagory {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.catagory ul {
+    list-style-type: none;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+.catagory li li
+/*select the second li*/
+
+{
+    list-style-type: none;
+    margin-left: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.catagory ul li {
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+.catagory_and_date .catagory::-webkit-scrollbar {
+    display: none
+}
+
+
+/*button overwrite*/
+
+.btn-primary {
+    border-radius: 0px;
+}
+
+
+/*mobile*/
+
+.mainpage .catagory_and_date {
+    height: 100%;
+    max-height: 10%
+}
+
+.catagory_and_date_expanded {
+    height: 100%;
+    max-height: 70%
+}
+
+.mainpage .catagory_and_date .catagory {
+    height: 100%;
+    display: none;
+    /*    max-height: 80%*/
+}
+
+
+/*desktop*/
+
+@media (min-width:768px) {
+    .mainpage .catagory_and_date {
+        max-height: 100%
+    }
+    .mainpage .catagory_and_date .catagory {
+        display: block
+    }
+}
+
+
+/*========static charts========*/
+
+
+/*common settings*/
+
+
+/*mobile - vertical >>>>>>>>>>*/
+
+.mainpage .statics .chart_horizon {
+    display: none;
+    /*    hide horizon chart*/
+}
+
+.mainpage .statics {
+    height: 100%;
+    max-height: 30%;
+}
+
+.statics .statics_title {
+    height: 100%;
+    max-height: 20%;
+    display: none;
+}
+
+.mainpage .statics .chart_vertical {
+    height: 100%;
+    display: block;
+}
+
+.chart_vertical {
+    height: 100%;
+    max-height: 100%;
+    overflow: scroll;
+    overflow-y: hidden;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+
+.chart_vertical::-webkit-scrollbar {
+    display: none
+}
+
+.chart_plane_vertical {
+    padding-left: 0px;
+    height: 100%;
+    display: block;
+    white-space: nowrap;
+    position: relative;
+    /*
+        border-color: #e4e4e4;
+    border-width: 1px;
+    border-style: solid;
+*/
+}
+
+.chart_plane_vertical ul {
+    list-style-type: none;
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+    white-space: nowrap;
+}
+
+.chart_plane_vertical li {
+    list-style-type: none;
+    display: inline;
+}
+
+.chart_item_vertical {
+    margin-left: 0px;
+    padding-left: 0px;
+    width: 4em;
+    height: 100%;
+    margin-left: 1px;
+    margin-right: 1px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.chart_empty_vertical {
+    height: 00%;
+    display: none
+}
+
+.chart_text_vertical {
+    text-align: center;
+    height: 15%
+}
+
+.chart_bar_vertical {
+    height: 85%;
+    background-color: #444;
+}
+
+
+/*vertical end<<<<<<<<<*/
+
+
+/*desktop - horizon begin*/
+
+@media (min-width:768px) {
+    .mainpage .statics {
+        max-height: 100%;
+    }
+    .statics .statics_title {
+        height: 100%;
+        max-height: 6%;
+        display: block;
+    }
+    .mainpage .statics .chart_horizon {
+        display: block;
+        height: 100%;
+        max-height: 94%;
+    }
+    .mainpage .statics .chart_vertical {
+        display: none;
+    }
+}
+
+.chart_plane_horizon {
+    padding-left: 0px;
+    height: 100%;
+}
+
+.chart_bar_horizon {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding: 0px;
+    height: 4em;
+    background-color: #444;
+    width: 70%;
+    float: left
+}
+
+.chart_text_horizon {
+    text-align: center;
+    height: 4em
+}
+
+.chart_text_horizon p {
+    margin: auto;
+    padding-top: 1.25em
+}
+
+.chart_horizon {
+    overflow: scroll;
+    max-height: 84%
+}
+
+.chart_horizon::-webkit-scrollbar {
+    display: none
+}
+
+
+/*horizon end <<<<<<<<*/
