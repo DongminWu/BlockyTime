@@ -19,7 +19,6 @@ init_app = Initialization().get_global_app()
 init_db = Initialization().global_create_db(init_app)
 
 
-
 from DB_Model import database_helper
 db_helper = database_helper.database_helper(init_db)
 db_helper.rebuild_database()
@@ -74,6 +73,15 @@ migrate = Migrate(init_app, init_db)
 manager = Manager(init_app)
 manager.add_command('db', MigrateCommand)
 
+from Page_Generator import Page_Generator
+page_gen = Page_Generator()
+
+
+@init_app.route('/', methods=['GET', 'POST', 'OPTIONS'])
+def index():
+    return page_gen.generatePage()
+
+
 
 '''
 add some env to shell command
@@ -111,5 +119,6 @@ if __name__ == '__main__':
               str(config.getConfig("version")))
     debug_msg("**********************************************")
 
-    init_app.run(host=config.getConfig("host"),port=config.getConfig("port"), debug=True)
+    init_app.run(host=config.getConfig("host"),
+                 port=config.getConfig("port"), debug=True)
     manager.run()

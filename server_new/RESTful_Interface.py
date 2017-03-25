@@ -20,6 +20,35 @@ from Data_Controllers.blocks_controller import blocks_controller
 #########
 
 
+class interface_helper(object):
+    def __init__(self):
+        debug_msg(">>> %s.%s" % (__name__, sys._getframe().f_code.co_name))
+
+    def check_items(self, obj, users=False, blocks=False, statistics=False, date=False, categories=False):
+        '''
+        to avoid the empty pointer issue
+        '''
+        if not isinstance(obj, dict):
+            return False
+
+        if users:
+            return 'users' in obj.keys()
+
+        if blocks:
+            return 'blocks' in obj.keys()
+
+        if statistics:
+            return 'statistics' in obj.keys()
+
+        if date:
+            return 'date' in obj.keys()
+
+        if categories:
+            return 'categories' in obj.keys()
+
+        return True
+
+
 class mainpage_date(Resource):
     def get(self, uid, date):
         ret = {}
@@ -43,8 +72,29 @@ class mainpage_date(Resource):
 
         return ret
 
-    def post(self):
-        pass
+    def post(self, uid, date):
+        '''
+        1. verify the GET value with POST value
+        2. update blocks
+        '''
+        helper = interface_helper()
+        decoded = json.loads(request.form['data'])
+        if decoded is None:
+            return "None data", 400
+        if not helper.check_items(decoded, users=True, blocks=True, date=True):
+            return "error data", 400
+        if uid != decoded['users']['uid']:
+            return "error data", 400
+        if date != decoded['date']['date']:
+            return "error data", 400
+        day_con = day_controller(user_id=uid, date_string=date)
+        blocks_con = blocks_controller(uid)
+        for each in decoded['blocks']:
+            blocks_con.update_a_block(
+                each['id'], each['secondary_category_id'])
+        day_con.update_day_data(None)
+
+        return "upload success", 200
 
 
 class Resource_Date(Resource):
