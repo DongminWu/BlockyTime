@@ -18,7 +18,47 @@ body .container {
     max-height: 8%
 }
 
+
+
+
 .mainpage {
     height: 100%;
-    max-height: 84%
+    max-height: 91%
 }
+
+
+/*nav sidebar*/
+
+
+.nav_sidebar{
+    
+    border-style: none; /*for debuging*/
+    padding: 0px
+}
+
+.sidebar_items
+{
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    
+}
+
+
+.sidebar_items {
+    font-size: 110%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
+
+.sidebar_items:active,
+.sidebar_items.active
+{
+
+    border-right-style:none; 
+
+}
+
+
+

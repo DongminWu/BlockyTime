@@ -78,40 +78,8 @@ body .container {
     text-align: center;
 }
 
-.halfhour-column .row label {
-    background-color: #fff;
-}
-
-.halfhour-column .row label.active {
-    background-color: #e6e6e6;
-}
-
-.halfhour-column .row label:active,
-.halfhour-column .row label.active {
-    background-image: none;
-    outline: 0;
-    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
-}
-
 .halfhour-column .row {
     padding: 1px 1px 1px 1px
-}
-
-.hour-column .row label {
-    background-color: #fff;
-}
-
-.hour-column .row label.active {
-    background-color: #e6e6e6;
-}
-
-.hour-column .row label:active,
-.hour-column .row label.active {
-    background-image: none;
-    outline: 0;
-    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
 }
 
 .hour-column .row {
@@ -138,29 +106,6 @@ body .container {
     display: none
 }
 
-
-/*btn overwrite*/
-
-.btn-default {
-    border-radius: 0px;
-}
-
-.btn-default:active {
-    border-color: #fff;
-}
-
-.hour-column .row label.active,
-.hour-column .row label.active.focus,
-.hour-column .row label.active:focus,
-.hour-column .row label:active.focus,
-.hour-column .row label:active:focus,
-.halfhour-column .row label.active,
-.halfhour-column .row label.active.focus,
-.halfhour-column .row label.active:focus,
-.halfhour-column .row label:active.focus,
-.halfhour-column .row label:active:focus {
-    border-color: #fff
-}
 
 
 /*font size*/

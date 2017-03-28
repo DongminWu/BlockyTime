@@ -17,6 +17,7 @@
     <!-- Custom styles for this template -->
     <link href="./css/bootstrap-datepicker.css" rel="stylesheet">
     <link href="./css/normalize.css" rel="stylesheet">
+    <link href="./css/mystyle.css" rel="stylesheet">
     <link href="./css/settings.css" rel="stylesheet">
 
     <style>
@@ -65,16 +66,26 @@
 
 
         <div class="row mainpage">
-            <div class="col-xs-4 col-sm-2">
-                <ul class="nav nav-stacked">
-                    <li role="presentation" class="active"><a href="#">Statistics</a></li>
-                    <li role="presentation"><a href="#">Categories</a></li>
-                    <li role="presentation"><a href="#">Account</a></li>
-                </ul>
+            <div class="col-xs-5 col-sm-3 nav_sidebar">
+                <div class="nav nav-stacked" data-toggle="buttons">
+
+                    <label class="sidebar_items btn btn-default btn-block reform_btn_default">
+                            <input type="radio" name="selections" id="selections1" autocomplete="off" checked>Statistics
+                    </label>
+
+
+                    <label class="sidebar_items btn btn-default btn-block reform_btn_default">
+                            <input type="radio" name="selections" id="selections2" autocomplete="off" checked>Categories
+                    </label>
+
+                    <label class="sidebar_items btn btn-default btn-block reform_btn_default">
+                            <input type="radio" name="selections" id="selections3" autocomplete="off" checked>Account
+                    </label>
+                </div>
             </div>
-            <div class="col-xs-8 col-sm-10" style="background-color: grey; height: 100%;">
-                
-                
+            <div class="col-xs-7 col-sm-9" style="background-color: grey; height: 100%;">
+               
+
             </div>
 
         </div>
