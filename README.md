@@ -751,8 +751,34 @@ Finally, found it is because I have a typo on database_path
 :( got very depressive today..
 
 
+##3.31
 
+met some issue about how to align an element in vertical direction.
 
+solved with using `display: table`
+
+HTML
+
+```
+<div id="wrapper">  
+    <div id="cell">
+        <div class="content">Content goes here</div>
+    </div>
+</div>  
+```
+
+CSS
+
+```
+#wrapper {
+    display: table;
+}
+
+#cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+```
 
 
 	
