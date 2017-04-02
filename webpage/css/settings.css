@@ -96,6 +96,10 @@
     display: none
 }
 
+.categories_template{
+    display: none;
+}
+
 
 /*>>>for vertically centerlizing*/
 
@@ -104,7 +108,7 @@
 /*    display: table;*/
     border-spacing: 0px 0px;
     border-collapse: separate;
-    border-style: none;
+
 }
 
 .categories_extended,
@@ -114,7 +118,7 @@
 }
 
 .categories_name{
-    background-color: burlywood;
+/*    background-color: burlywood;*/
     width: 99999999px
     
 }
@@ -139,6 +143,9 @@
 .categories {
     margin-top: 1px;
     margin-bottom: 1px;
+        border-style: solid;
+    border-width: 1px;
+    border-color: #e4e4e4
 }
 
 .categories_extended {

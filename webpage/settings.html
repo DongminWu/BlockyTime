@@ -128,29 +128,46 @@
                         <p>add or remove categories</p>
                     </div>
                     <div class="categories_container">
-                        <div id="primary " class="categories">
+                        <div id="primary_add" class="categories">
                             <div id="primary_name" class="categories_name">
-                                <h4 class="name_text">primary categories</h4>
-                            </div>
-                            <div class="categories_extended">
-                                <div class="categories_edit">
-                                    <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>
-                                </div>
-                                <div class="categories_delete" data-toggle="modal" data-target=".delete_warning_modal">
-                                    <i class="fa fa-trash fa-fw" aria-hidden="true"></i>
-                                </div>
+                                <h4 class="name_text" style="text-align:center;">+</h4>
                             </div>
                         </div>
-                        <div id="secondary" class="categories">
-                            <div id="secondary_name" class="categories_name">
-                                <h5 class="name_text">secondary categories</h5>
-                            </div>
-                            <div class="categories_extended">
-                                <div class="categories_edit">
-                                    <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>
+                        
+                        <div class="categories_template">
+                            <div id="primary_template">
+                                <div id="primary" class="categories">
+                                    <div id="primary_name" class="categories_name">
+                                        <h4 class="name_text">primary categories</h4>
+                                    </div>
+                                    <div class="categories_extended">
+                                        <div class="categories_edit">
+                                            <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="categories_delete" data-toggle="modal" data-target=".delete_warning_modal">
+                                            <i class="fa fa-trash fa-fw" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="categories_delete" data-toggle="modal" data-target=".delete_warning_modal">
-                                    <i class="fa fa-trash fa-fw" aria-hidden="true"></i>
+                                <div id="secondary_add" class="categories">
+                                    <div id="secondary_name" class="categories_name">
+                                        <h5 class="name_text" style="text-align:center;">+</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="secondary_template">
+                                <div id="secondary" class="categories">
+                                    <div id="secondary_name" class="categories_name">
+                                        <h5 class="name_text">secondary categories</h5>
+                                    </div>
+                                    <div class="categories_extended">
+                                        <div class="categories_edit">
+                                            <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="categories_delete" data-toggle="modal" data-target=".delete_warning_modal">
+                                            <i class="fa fa-trash fa-fw" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -174,16 +191,16 @@
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Warning</h4>
-      </div>
-      <div class="modal-body">
-        Are you SURE to delete this category? If it is a primary category, you will remove all the secondary categories.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">No, thanks</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Yes</button>
-      </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Warning</h4>
+                </div>
+                <div class="modal-body">
+                    Are you SURE to delete this category? If it is a primary category, you will remove all the secondary categories.
+                </div>
+                <div class="modal-footer">
+                    <button id="no_button" type="button" class="btn btn-primary" data-dismiss="modal">No, thanks</button>
+                    <button id="yes_button" type="button" class="btn btn-default" data-dismiss="modal">Yes</button>
+                </div>
             </div>
         </div>
     </div>
