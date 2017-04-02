@@ -89,12 +89,10 @@ $(document).ready(function () {
     $("#primary_add").click(function () {
         new_primary_group = $("#primary_template").clone(true)
         new_primary_group.addClass("categories_group")
+        new_primary_group.attr('id','')
         new_primary_group.insertAfter($(this))
         new_edit = new_primary_group.find("#primary").find(".categories_edit")
-//        new_primary_group.find("#secondary_add").click(function () {
-//        new_primary_group.find("#secondary_add").click(function () {
-//            secondary_add_handler($(this)) //rebinding handler
-//        })
+
         turn_to_editable(new_edit)
     })
 
