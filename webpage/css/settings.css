@@ -34,7 +34,7 @@
     /*    background-color: grey;*/
     padding-top: 2%;
     padding-bottom: 2%;
-    border-color: black;
+    border-color: #e6e6e6;
     border-style: solid;
     border-width: 1px;
     padding-left: 5px;
@@ -100,6 +100,12 @@
     display: none;
 }
 
+.categories_save
+{
+    background-color: #e4e4e4;
+    text-align: center
+}
+
 
 /*>>>for vertically centerlizing*/
 
@@ -162,6 +168,7 @@
 
 .categories_name:active,
 .categories_edit:active,
+.categories_save:active,
 .categories_delete:active
 {
     background-color: #e6e6e6;
