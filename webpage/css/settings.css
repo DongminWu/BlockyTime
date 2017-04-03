@@ -82,7 +82,7 @@
     height: 96%;
     min-height: 0%;
     /*because the padding of father is 2% for top and bottem*/
-    /*    display: none;*/
+    display: none;
 }
 
 .categories_container {
@@ -191,4 +191,50 @@
 
 .categories_delete {
     background-color: darksalmon
+}
+
+
+/*account tab content*/
+
+.account_name,
+.account_password_area
+{
+    text-align: center;
+}
+
+.account_password_area
+{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.account_password_submit p,
+.account_logout p
+{
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e4e4e4 
+}
+.account_password_submit p:active,
+.account_logout p:active
+{
+    background-color: #e6e6e6;
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+
+.account_logout,
+.account_logout_placeholder
+{
+    text-align: center;
+    padding-top: 2em;
+}
+
+.account_logout_placeholder
+{
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #e9e9e9;
 }
