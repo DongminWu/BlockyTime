@@ -89,11 +89,22 @@ $(document).ready(function () {
     $("#primary_add").click(function () {
         new_primary_group = $("#primary_template").clone(true)
         new_primary_group.addClass("categories_group")
-        new_primary_group.attr('id','')
+        new_primary_group.attr('id', '')
         new_primary_group.insertAfter($(this))
         new_edit = new_primary_group.find("#primary").find(".categories_edit")
 
         turn_to_editable(new_edit)
+    })
+
+    //tab switch
+    //initially, show statistic page
+
+    $(".sidebar_items").click(function () {
+        tab_object = $("." + $(this).attr("id") + "_tab")
+        if (tab_object.css("display") == "none") {
+            tab_object.siblings().css("display","none")
+            tab_object.css("display","block")
+        }
     })
 
 
