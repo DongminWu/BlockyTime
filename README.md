@@ -489,7 +489,7 @@ do not use `height:80%`. the better way to set presentage height is `height:100%
 4. Main page:
 	1. Behavior:
 		1. User will see a simple static of today's statics information
-		2. User can jump to another Date to see what happend on that date.
+		2. User can jump to another Date to see what happened on that date.
 		3. Users are only able to assign second category to a block
 		4. every primary category have a default second category named "other"
 
